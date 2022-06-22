@@ -1,0 +1,19 @@
+version: '3.5'
+
+services:
+
+  db:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: test
+
+  bot:
+    build: . 
+    environment: 
+      TOKEN:  5592827745:AAF2PuuStC5FFv21_3YBjIupkijM8mtRv6w
+      HOST: db
+      PORT: 5432
+      USER: postgres
+      PASSWORD: test
+      DBNAME: postgres
+      SSLMODE: disable
